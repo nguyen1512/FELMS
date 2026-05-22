@@ -1,65 +1,65 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-[#f6f7fb] p-10">
+      <h1 className="text-3xl font-bold text-slate-900">
+        AnU Internal Learning System
+      </h1>
+
+      <p className="mt-2 text-slate-500">
+        Chọn khu vực quản trị để bắt đầu.
+      </p>
+
+      <div className="mt-8 grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-3">
+        <Link
+          href="/admin"
+          className="rounded-2xl border bg-white p-6 shadow-sm hover:border-orange-400"
+        >
+          <h2 className="text-xl font-bold text-orange-600">Admin hệ thống</h2>
+          <p className="mt-2 text-sm text-slate-500">
+            Quản lý nhân sự, phòng ban, vai trò, quyền và cấu hình.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </Link>
+
+        <Link
+          href="/lms-admin"
+          className="rounded-2xl border bg-white p-6 shadow-sm hover:border-orange-400"
+        >
+          <h2 className="text-xl font-bold text-orange-600">Quản trị LMS</h2>
+          <p className="mt-2 text-sm text-slate-500">
+            Quản lý khóa học, giảng viên, báo cáo và tài nguyên học tập.
+          </p>
+        </Link>
+
+        <Link
+          href="/employee"
+          className="rounded-2xl border bg-white p-6 shadow-sm hover:border-orange-400"
+        >
+          <h2 className="text-xl font-bold text-orange-600">Nhân viên</h2>
+          <p className="mt-2 text-sm text-slate-500">
+            Xem khóa học, tiến độ, chứng chỉ và radar năng lực.
+          </p>
+        </Link>
+      </div>
+
+      <div className="mt-5 max-w-5xl">
+        <Link
+          href="/login?redirect=/lms-student/entrance-test"
+          className="block rounded-2xl border bg-white p-6 shadow-sm hover:border-orange-400"
+        >
+          <div className="flex items-start justify-between gap-3">
+            <h2 className="text-xl font-bold text-orange-600">Test đầu vào</h2>
+            <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">
+              10 câu
+            </span>
+          </div>
+
+          <p className="mt-2 text-sm text-slate-500">
+            Làm bài test đầu vào để đánh giá năng lực ban đầu.
+          </p>
+        </Link>
+      </div>
+    </main>
   );
 }
